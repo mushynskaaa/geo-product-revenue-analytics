@@ -18,3 +18,6 @@ Every stage has its own folder - the SQL query, a screenshot of it running, the 
 
 ## Tools
 SQL (BigQuery), Looker Studio, and this repo for keeping it organized.
+
+## Get in touch
+Feel free to connect on [LinkedIn](www.linkedin.com/in/yuliia-mushynska-a31141346), or check out more dashboards on [Tableau Public](https://public.tableau.com/app/profile/yuliia.mushynska).
