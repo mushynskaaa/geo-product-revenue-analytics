@@ -17,7 +17,7 @@ The analysis is split into a few stages:
 Every stage has its own folder - the SQL query, a screenshot of it running, the dashboard, and the findings.
 
 ### Dataset structure
---
+---
 
 The dataset describes an online business: user sessions, orders, products,
 subscriptions and email communication. The session identifier is `ga_session_id`.
