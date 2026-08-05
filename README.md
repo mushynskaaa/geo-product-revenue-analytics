@@ -3,7 +3,7 @@
 This project looks at customer behavior and revenue for an e-commerce business - where customers are located, what they buy, how they respond to marketing, and how revenue moves over time. The point is to take raw transaction data and figure out what's actually going on with the business.
 
 ## Why it matters
-A lot of business decisions get made without really looking at the data behind them. Without knowing which markets or products actually deserve attention, teams end up relying on assumptions instead of evidence. This project works through some of those questions using SQL and a bit of logic.
+A lot of business decisions get made without really looking at the data behind them. Without knowing which markets or products actually deserve attention, teams end up relying on assumptions instead of evidence. This project works through some of those questions using SQL and logic.
 
 ## Project structure
 The analysis is split into a few stages:
