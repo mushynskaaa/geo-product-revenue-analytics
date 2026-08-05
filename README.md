@@ -16,6 +16,69 @@ The analysis is split into a few stages:
 
 Every stage has its own folder - the SQL query, a screenshot of it running, the dashboard, and the findings.
 
+### Dataset structure
+
+The dataset describes an online business: user sessions, orders, products,
+subscriptions and email communication. The session identifier is `ga_session_id`.
+
+#### Tables used in the project
+
+**`order`** — orders. One row = one purchased unit.
+
+| Column | Description |
+|---|---|
+| `ga_session_id` | Session in which the purchase happened |
+| `item_id` | Product identifier |
+
+**`session`** — user sessions.
+
+| Column | Description |
+|---|---|
+| `date` | Session date |
+| `ga_session_id` | Session identifier |
+
+**`session_params`** — additional session information.
+
+| Column | Description |
+|---|---|
+| `ga_session_id` | Session identifier |
+| `device` | Device type (desktop, mobile, tablet) |
+| `mobile_model_name` | Mobile device model |
+| `operating_system` | Operating system |
+| `language` | Browser language |
+| `browser` | Browser |
+| `continent` | Continent |
+| `country` | Country by IP |
+| `medium` | Traffic source identifier |
+| `name` | Additional source information |
+| `channel` | General traffic channel |
+
+**`product`** — product catalogue.
+
+| Column | Description |
+|---|---|
+| `item_id` | Product identifier |
+| `name` | Product name |
+| `category` | Product category |
+| `price` | Price, USD |
+| `short_description` | Short product description |
+
+**`account`** — site subscribers (users who left an email).
+
+| Column | Description |
+|---|---|
+| `id` | Subscriber identifier |
+| `send_interval` | Email sending interval |
+| `is_verified` | Email verified (0/1) |
+| `is_unsubscribed` | Unsubscribed (0/1) |
+
+**`account_session`** — link between a subscriber and a session.
+
+| Column | Description |
+|---|---|
+| `account_id` | Subscriber identifier |
+| `ga_session_id` | Session identifier |
+
 ## Tools
 SQL (BigQuery), Looker Studio, and this repo for keeping it organized.
 
