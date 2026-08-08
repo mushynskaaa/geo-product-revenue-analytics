@@ -82,8 +82,8 @@ WITH top_5_countries_by_revenue as
   LIMIT 5
 ),
 
-country_by_category as 
-( SELECT country
+country_by_category as (
+  SELECT country
       , category
       , SUM(p.price) as category_revenue
       , ROW_NUMBER() OVER (PARTITION BY country ORDER BY SUM(p.price) DESC) as rank
