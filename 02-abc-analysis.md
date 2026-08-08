@@ -17,8 +17,8 @@ A validation of the product identifiers confirmed that this distinction is impor
 
 ```sql
 WITH
-    item_revenue AS (
-    SELECT p.item_id as item_id
+   item_revenue AS (
+    SELECT p.item_id AS item_id
         , name
         , category
         , SUM(p.price) AS revenue
@@ -39,25 +39,25 @@ WITH
   ),
 
 
-abc_result AS (
-  SELECT item_id
-    , name
-    , category
-    , revenue
-    , revenue_pct
-    , cumulative_revenue
-    , cumulative_pct
-    , CASE WHEN cumulative_pct <= 80 THEN 'A'
-    WHEN cumulative_pct <= 95 THEN 'B'
-    ELSE 'C' END AS ABC
-FROM cml_item
-ORDER BY revenue DESC
+  abc_result AS (
+   SELECT item_id
+     , name
+     , category
+     , revenue
+     , revenue_pct
+     , cumulative_revenue
+     , cumulative_pct
+     , CASE WHEN cumulative_pct <= 80 THEN 'A'
+     WHEN cumulative_pct <= 95 THEN 'B'
+     ELSE 'C' END AS ABC
+   FROM cml_item
+   ORDER BY revenue DESC
 )
 
 SELECT abc
-    , COUNT(*) as cnt_items
-    , COUNT(*) / SUM(COUNT(*)) OVER () * 100 as items_pct
-    , SUM(revenue_pct) as revenue_pct_it
+    , COUNT(*) AS cnt_items
+    , COUNT(*) / SUM(COUNT(*)) OVER () * 100 AS items_pct
+    , SUM(revenue_pct) AS revenue_pct_it
 FROM abc_result
 GROUP BY abc
 ORDER BY abc
