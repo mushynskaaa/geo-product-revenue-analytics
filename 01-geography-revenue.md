@@ -68,10 +68,10 @@ Revenue is used as the primary ranking metric, while the number of orders is sho
 
 ```sql
 
-WITH top_5_countries_by_revenue as
-(
+WITH
+top_5_countries_by_revenue AS (
   SELECT country
-      , SUM(p.price) as country_revenue
+      , SUM(p.price) AS country_revenue
   FROM `DA.session_params` AS sp
   JOIN `DA.order` AS o
   ON sp.ga_session_id = o.ga_session_id
@@ -82,12 +82,12 @@ WITH top_5_countries_by_revenue as
   LIMIT 5
 ),
 
-country_by_category as (
+country_by_category AS (
   SELECT country
       , category
-      , SUM(p.price) as category_revenue
-      , ROW_NUMBER() OVER (PARTITION BY country ORDER BY SUM(p.price) DESC) as rank
-      , COUNT(*) as cnt_orders
+      , SUM(p.price) AS category_revenue
+      , ROW_NUMBER() OVER (PARTITION BY country ORDER BY SUM(p.price) DESC) AS rank
+      , COUNT(*) AS cnt_orders
 FROM `DA.session_params` AS sp
 JOIN `DA.order` AS o
 ON sp.ga_session_id = o.ga_session_id
@@ -96,11 +96,11 @@ ON o.item_id = p.item_id
 GROUP BY country, category
 )
 
-SELECT country_by_category.country as country
+SELECT country_by_category.country AS country
       , category
       , category_revenue
       , cnt_orders
-FROM top_5_countries_by_revenue as top_5_countries
+FROM top_5_countries_by_revenue AS top_5_countries
 JOIN country_by_category
 ON top_5_countries.country = country_by_category.country
 WHERE rank <= 3
