@@ -8,6 +8,8 @@
 
 The majority of revenue is concentrated in 5-7 countries, accounting for 80% of total revenue.
 
+## Part 1. Revenue by country
+
 ### Query
 
 ```sql
