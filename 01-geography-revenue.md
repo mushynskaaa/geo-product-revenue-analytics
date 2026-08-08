@@ -52,7 +52,7 @@ The first 14 countries account for 80% of total revenue, while the remaining 93 
 
 ### Findings
 
-My hypothesis was not supported. The 80% threshold falls not at 5–7 countries but at the fourteenth. Revenue is concentrated not across a group of fourteen countries but primarily in a single one: the United States alone accounts for almost half of all revenue (43.98%).
+My hypothesis was not supported. The 80% threshold falls not at 5-7 countries but at the fourteenth. Revenue is concentrated not across a group of fourteen countries but primarily in a single one: the United States alone accounts for almost half of all revenue (43.98%).
 
 The second-largest market, India, trails the leader almost fivefold (8.86%), and every country after that contributes progressively less. So the structure is not an even spread across fourteen markets but one dominant market followed by a long tail of more than ninety countries that together make up only the final 20%.
 
