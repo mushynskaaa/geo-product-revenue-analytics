@@ -5,22 +5,22 @@ Before calculating revenue, I check the basic properties of the data: period bou
 ## 1. Data period
 The dataset contains three distinct time boundaries, and it is important to separate them from the outset.
 ```sql
-SELECT MIN(date) as min
-    , MAX(date) as max
+SELECT MIN(date) AS min
+    , MAX(date) AS max
 FROM `DA.session`;
 -- 2020-11-01 … 2021-01-31
 ```
-<img width="745" height="462" alt="image" src="https://github.com/user-attachments/assets/3cdac01f-255f-4958-b22a-5ded4a5a856c" />
+<img width="396" height="402" alt="image" src="https://github.com/user-attachments/assets/a26d6bf4-7bba-4c8a-a793-74aa028922ad" />
 
 ```sql
-SELECT MIN(s.date) as min
-    , MAX(s.date) as max
+SELECT MIN(s.date) AS min
+    , MAX(s.date) AS max
 FROM `DA.order` o
 JOIN `DA.session` s
 ON o.ga_session_id = s.ga_session_id;
 -- 2020-11-01 … 2021-01-27
 ```
-<img width="707" height="508" alt="image" src="https://github.com/user-attachments/assets/93438f2e-95b5-437b-85e0-1af85717a5f2" />
+<img width="373" height="418" alt="image" src="https://github.com/user-attachments/assets/c0dc97b0-1970-4c81-ab96-49bdc572bdaf" />
 
 Sessions run until January 31, orders until the 27th. The four-day gap is sessions with no purchases at the end of the period. Since the project is built around revenue, I take the order period as the working range: **2020-11-01 – 2021-01-27**.
 
