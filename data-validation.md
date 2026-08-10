@@ -91,7 +91,7 @@ ON o.ga_session_id = ass.ga_session_id;
 ```
 <img width="407" height="400" alt="image" src="https://github.com/user-attachments/assets/b6e0061b-a781-49c7-b0df-d4e013608ab5" />
 
-To verify the possibility of analyzing repeat purchases, we also determine whether there are any accounts associated with more than one order:
+To verify the possibility of analyzing repeat purchases, I also determine whether there are any accounts associated with more than one order:
 
 ```sql
 SELECT
