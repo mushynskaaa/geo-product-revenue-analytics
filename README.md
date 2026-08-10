@@ -21,7 +21,7 @@ Revenue is concentrated on one market, not a group. The United States alone acco
 
 The 80/20 rule doesn't hold for products, it's closer to 80/34. It takes 851 products (34% of the catalogue), not 20%, to reach 80% of revenue, so there are no standout hit products. At the other end, group C (970 products) plus 434 products with zero sales, roughly half the catalogue, contribute almost nothing.
 
-Traffic volume equals revenue, there's no vanity channel. Every channel converts at almost exactly the same rate (~9.58%) with near-identical order values, so a channel's revenue depends only on how much traffic it brings. Organic Search leads (35.8%), ahead of Paid Search,  free search, not advertising, is the largest revenue source.
+Traffic volume equals revenue. Every channel converts at almost exactly the same rate (~9.58%) with near-identical order values, so a channel's revenue depends only on how much traffic it brings. Organic Search leads (35.8%), ahead of Paid Search,  free search, not advertising, is the largest revenue source.
 
 The revenue trend can't be measured, only its shape. With three months of one peak season and no prior year to compare against, there's no basis for a growth conclusion. The weekly view shows a mild peak in early December and, notably, no dramatic holiday effects.
 
