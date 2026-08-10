@@ -13,10 +13,10 @@ I look at the series at two granularities. The daily level is meant to catch spe
 -- daily
 SELECT date
     , SUM(price) AS revenue
-FROM `DA.session` s
-JOIN `DA.order` o
+FROM `DA.session` AS s
+JOIN `DA.order` AS o
 ON s.ga_session_id = o.ga_session_id
-JOIN `DA.product` p
+JOIN `DA.product` AS p
 ON o.item_id = p.item_id
 GROUP BY date
 ORDER BY date;
@@ -24,10 +24,10 @@ ORDER BY date;
 -- weekly
 SELECT DATE_TRUNC(date, WEEK) AS week
     , SUM(price) AS revenue
-FROM `DA.session` s
-JOIN `DA.order` o
+FROM `DA.session` AS s
+JOIN `DA.order` AS o
 ON s.ga_session_id = o.ga_session_id
-JOIN `DA.product` p
+JOIN `DA.product` AS p
 ON o.item_id = p.item_id
 GROUP BY week
 ORDER BY week;
