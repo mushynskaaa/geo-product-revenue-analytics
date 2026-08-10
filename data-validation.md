@@ -15,12 +15,12 @@ FROM `DA.session`;
 ```sql
 SELECT MIN(s.date) AS min
     , MAX(s.date) AS max
-FROM `DA.order` o
-JOIN `DA.session` s
+FROM `DA.order` AS o
+JOIN `DA.session` AS s
 ON o.ga_session_id = s.ga_session_id;
 -- 2020-11-01 … 2021-01-27
 ```
-<img width="373" height="418" alt="image" src="https://github.com/user-attachments/assets/c0dc97b0-1970-4c81-ab96-49bdc572bdaf" />
+<img width="400" height="437" alt="image" src="https://github.com/user-attachments/assets/a7eea8b1-becb-427a-b21a-633887a84c6f" />
 
 Sessions run until January 31, orders until the 27th. The four-day gap is sessions with no purchases at the end of the period. Since the project is built around revenue, I take the order period as the working range: **2020-11-01 – 2021-01-27**.
 
@@ -31,10 +31,10 @@ The key limitation is set here. The window covers roughly three months: November
 ## 2. Volume and grain
 
 ```sql
-SELECT COUNT(*) as cnt_order
+SELECT COUNT(*) AS cnt_order
 FROM `DA.order`;  -- 33,538
 ```
-<img width="430" height="358" alt="image" src="https://github.com/user-attachments/assets/1729042b-8279-497f-b487-8541da10d082" />
+<img width="425" height="357" alt="image" src="https://github.com/user-attachments/assets/38fd0080-b899-4383-b925-22532ee92cbc" />
 
 ```sql
 SELECT COUNT(DISTINCT ga_session_id)
@@ -44,13 +44,13 @@ FROM `DA.order`;  -- 33,538
 
 The row count equals the number of unique sessions.
 ```sql
-SELECT ga_session_id, COUNT(*) as items
+SELECT ga_session_id, COUNT(*) AS items
 FROM `DA.order`
 GROUP BY ga_session_id
 HAVING COUNT(*) >= 2;
 -- 0 rows
 ```
-<img width="435" height="495" alt="image" src="https://github.com/user-attachments/assets/00cd95c6-8ca2-4f92-876c-266b08304e07" />
+<img width="411" height="417" alt="image" src="https://github.com/user-attachments/assets/083d67be-3267-443e-825b-1c6c75b15b89" />
 
 No session has more than one row. On this data, then, one session corresponds to one order and one purchased unit. 
 Joining `order` to `session` does not multiply rows, so the revenue sum is not inflated and `DISTINCT` is not needed on aggregation. 
@@ -73,38 +73,38 @@ First I count the accounts that have at least one order:
 
 ```sql
 SELECT COUNT(DISTINCT ass.account_id)
-FROM `DA.account_session` ass
-JOIN `DA.order` o
+FROM `DA.account_session` AS ass
+JOIN `DA.order` AS o
 ON ass.ga_session_id = o.ga_session_id;
 -- 2781
 ```
-<img width="440" height="398" alt="image" src="https://github.com/user-attachments/assets/33a9db26-6199-4f8a-ad91-04e189e0cd26" />
+<img width="410" height="411" alt="image" src="https://github.com/user-attachments/assets/d3e389cf-dd2c-454b-81bd-6ea38fc45270" />
 
 I check how many orders have an account attached at all:
 
 ```sql
 SELECT COUNT(DISTINCT o.ga_session_id)
-FROM `DA.order` o
-JOIN `DA.account_session` ass
+FROM `DA.order` AS o
+JOIN `DA.account_session` AS ass
 ON o.ga_session_id = ass.ga_session_id;
 -- 2781
 ```
-<img width="446" height="413" alt="image" src="https://github.com/user-attachments/assets/ce8572a2-4fbe-4910-9099-b0ca3c038dc0" />
+<img width="407" height="400" alt="image" src="https://github.com/user-attachments/assets/b6e0061b-a781-49c7-b0df-d4e013608ab5" />
 
 To verify the possibility of analyzing repeat purchases, we also determine whether there are any accounts associated with more than one order:
 
 ```sql
 SELECT
     ass.account_id,
-    COUNT(*) as orders
-FROM `DA.order` o
-JOIN `DA.account_session` ass
+    COUNT(*) AS orders
+FROM `DA.order` AS o
+JOIN `DA.account_session` AS ass
 ON o.ga_session_id = ass.ga_session_id
 GROUP BY ass.account_id
 HAVING COUNT(*) > 1;
 -- 0
 ```
-<img width="472" height="570" alt="image" src="https://github.com/user-attachments/assets/47cc92db-06c3-4ce4-a2b0-fc7c03803008" />
+<img width="430" height="520" alt="image" src="https://github.com/user-attachments/assets/cf7537d8-77ec-4aed-905d-7168b563c159" />
 
 | Metric | Value |
 |---|---|
