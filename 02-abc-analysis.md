@@ -29,7 +29,6 @@ WITH
     SELECT item_id
         , revenue
         , revenue / SUM(revenue) OVER () * 100 AS revenue_pct
-        , SUM(revenue) OVER (ORDER BY revenue DESC) AS cumulative_revenue
         , SUM(revenue) OVER (ORDER BY revenue DESC) / SUM(revenue) OVER () * 100 AS cumulative_pct
     FROM item_revenue
   ),
@@ -39,13 +38,11 @@ WITH
    SELECT item_id
      , revenue
      , revenue_pct
-     , cumulative_revenue
      , cumulative_pct
      , CASE WHEN cumulative_pct <= 80 THEN 'A'
      WHEN cumulative_pct <= 95 THEN 'B'
      ELSE 'C' END AS ABC
    FROM cml_item
-   ORDER BY revenue DESC
 )
 
 SELECT abc
