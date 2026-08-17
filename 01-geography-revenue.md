@@ -50,6 +50,8 @@ ORDER BY revenue DESC;
 
 The first 14 countries account for 80% of total revenue, while the remaining 93 countries contribute the remaining 20%.
 
+<img width="1248" height="817" alt="image" src="https://github.com/user-attachments/assets/692d0e82-9935-4f80-8068-7c2ebd4345c5" />
+
 ### Findings
 
 My hypothesis was not supported. The 80% threshold falls not at 5-7 countries but at the fourteenth. Revenue is concentrated not across a group of fourteen countries but primarily in a single one: the United States alone accounts for almost half of all revenue (43.98%).
