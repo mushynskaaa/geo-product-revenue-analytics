@@ -69,6 +69,8 @@ ORDER BY abc
 
 Only 2,528 products entered the analysis - those sold at least once. The gap to the full catalogue (2,962 - 2,528 = 434 products) represents items with zero sales during the period.
 
+<img width="808" height="407" alt="image" src="https://github.com/user-attachments/assets/29c1fd0e-37c8-4e79-a6e2-e0e2a40487bc" />
+
 ## Findings
 
 The hypothesis was not supported. Group A is formed not by approximately 20% of products, but by 851 products (34% of the catalogue). In other words, generating 80% of total revenue requires roughly one-third of all products, making the observed distribution closer to “80/34” than to the classic 80/20 pattern.
