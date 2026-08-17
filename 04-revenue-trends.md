@@ -37,6 +37,8 @@ ORDER BY week;
 
 <img width="497" height="527" alt="image" src="https://github.com/user-attachments/assets/d1fffce1-bbe9-4620-a459-f99470fb5f27" />
 
+<img width="1480" height="381" alt="image" src="https://github.com/user-attachments/assets/2063c281-c24f-41f0-9276-b2f10458a8d6" />
+
 ## Findings
 
 At the daily level the series is surprisingly even. There is no pronounced holiday spike and no expected January slump, the days fluctuate without a clear rise or fall, and the best-selling days are scattered across December plus one day in early January. Black Friday does not stand out at all.
