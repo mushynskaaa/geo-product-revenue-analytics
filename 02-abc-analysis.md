@@ -19,18 +19,14 @@ A validation of the product identifiers confirmed that this distinction is impor
 WITH
    item_revenue AS (
     SELECT p.item_id AS item_id
-        , name
-        , category
         , SUM(p.price) AS revenue
     FROM `DA.product` AS p
     JOIN `DA.order` AS o
       ON p.item_id = o.item_id
-    GROUP BY item_id, name, category
+    GROUP BY item_id
   ),
   cml_item AS (
     SELECT item_id
-        , name
-        , category
         , revenue
         , revenue / SUM(revenue) OVER () * 100 AS revenue_pct
         , SUM(revenue) OVER (ORDER BY revenue DESC) AS cumulative_revenue
@@ -41,8 +37,6 @@ WITH
 
   abc_result AS (
    SELECT item_id
-     , name
-     , category
      , revenue
      , revenue_pct
      , cumulative_revenue
