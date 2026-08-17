@@ -40,6 +40,10 @@ ORDER BY revenue DESC;
 
 <img width="1025" height="303" alt="image" src="https://github.com/user-attachments/assets/0e5b4fbc-80ff-4bf3-80e5-f8c3b466260d" />
 
+<img width="951" height="488" alt="image" src="https://github.com/user-attachments/assets/b1f40fdb-6dfe-43a4-98cf-4306cf10f585" />
+
+<img width="938" height="481" alt="image" src="https://github.com/user-attachments/assets/c60f13eb-f302-45c1-b623-0cab39cbf94a" />
+
 ## Findings
 
 My hypothesis was half right. The revenue split across channels came out close to what I expected in proportion, but I got the leader wrong. I predicted Paid Search would top the list, whereas the actual leader is Organic Search at 35.8%. Free search traffic, not paid advertising, is the largest source of revenue, with Paid Search second at 26.6% and Direct third at 23.4%.
