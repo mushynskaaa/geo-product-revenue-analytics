@@ -113,6 +113,8 @@ ORDER BY country_revenue DESC
 
 <img width="887" height="642" alt="image" src="https://github.com/user-attachments/assets/d89394f1-1895-47ff-832c-f44bf6e98cd7" />
 
+<img width="1197" height="327" alt="image" src="https://github.com/user-attachments/assets/aedbe310-5a3b-4df0-b6ab-2ede274292c7" />
+
 ### Findings
 
 The top two categories are consistent across all five largest markets. "Sofas & armchairs" generate the highest revenue, while "Chairs" rank first by order volume, which suggests that the main product mix is similar across all analyzed markets.
